@@ -1,0 +1,12 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+export SOURCE_DATE_EPOCH=283996800
+
+%:
+	dh $@ --with nodejs
+
+override_dh_auto_build:
+	./bin/marked-man --date="$(SOURCE_DATE_EPOCH)" README.md > marked-man.1

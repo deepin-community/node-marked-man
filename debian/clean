@@ -1,0 +1,2 @@
+test/*/*.err
+debian/marked-man.1
