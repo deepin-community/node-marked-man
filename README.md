@@ -1,19 +1,16 @@
-[![NPM](https://nodei.co/npm/marked-man.png?downloads=true)](https://nodei.co/npm/marked-man/)
-
 marked-man(1) -- markdown to roff
 =================================
 
 SYNOPSIS
 --------
 
+```bash
+marked-man README.md > doc/foo.1
+# works too with stdin
+cat README.md | marked-man --version 1.0 | man /dev/stdin
 ```
-marked-man README.md > doc/marked-man.1
-```
 
-See [marked README](https://github.com/chjj/marked) for documentation about how to use marked.
-
-Note that `marked-man --format=html` is the same as `marked`.
-
+See also [marked documentation](https://marked.js.org/).
 
 DESCRIPTION
 -----------
@@ -21,69 +18,79 @@ DESCRIPTION
 `marked-man` wraps `marked` to extend it with groff output support in order to
 create Unix manual pages for use with `man`.
 
+It follows the `ronn` markdown level-1 header format:
+    # name(section) -- short description
+
+which populates the *HEADER* section, and the *NAME* section (if none is already written) of the manpage.
 
 OPTIONS
 -------
 
-`marked-man` invokes `marked --gfm --sanitize`, and you can pass additional
-options through.  
-The `--breaks` option, which retains intra-paragraph line breaks, can be helpful to match default ronn behavior.
+`marked-man` is a `marked` CLI extension, meaning options can be passed directly to marked.
 
-`marked-man` adds some options to `marked`'s existing options:
+The `--breaks` option, which retains intra-paragraph line breaks, is now true by default. Use `--no-breaks` to disable it.
 
-* `--format <format>`  
-Sets the output format. Outputs html if different from `roff`.  
-Defaults to `roff`.
+`marked-man` adds some options to `marked`'s existing options, to be able to override the header/footer of generated man pages.
 
-* `--name <name>`  
-The name shown in the manpage header, if it isn't given in the ronn header like in this README.  
-Defaults to empty string.
+* `--name <name>`
+Optional, overrides `name` in ronn header.
 
-* `--section <section>`  
-The section number shown in the manpage header, if it isn't given in the ronn header like in this README.  
-Defaults to empty string.
+* `--section <section>`
+Optional, overrides `section` in ronn header. Defaults to 1.
 
-* `--version <version>`  
-The version shown in the manpage footer.  
-Defaults to empty string.  
-Breaking change in marked-man 0.7.0: this flag is converted to manVersion option,
-to avoid conflict with marked.
+* `--description <description>`
+Optional, overrides `description` in ronn header.
 
-* `--manual <manual>`  
-The manual-group name shown in the manpage header.  
-Defaults to empty string.
+* `--version <version>`
+The version shown in the manpage footer.
+Optional, when omitted, defaults to the target node module version, or empty.
 
-* `--date <date>`  
-The date shown in the manpage header.  
-Defaults to now, must be acceptable to `new Date(string or timestamp)`.
+* `--manual <manual>`
+The manual-group name shown in the manpage header.
+Optional, when omitted, man displays a value matching the section.
 
-
+* `--date <date>`
+The date shown in the manpage header.
+Optional, defaults to now.
+Must be acceptable to `new Date(string or timestamp)`.
+Honors `SOURCE_DATE_EPOCH` environment variable for reproducible builds.
 
 INSTALLATION
 ------------
 
-From the [npm registry](https://npmjs.com):
+See your node package manager manual...
 
-* locally (`--save`, `--save-dev`, or `--save-optional` add `marked-man` to your `package.json` file as a runtime, development-time, or optional runtime dependency, respectively)
+For example:
 
-        npm install marked-man [--save|--save-dev|--save-optional]
-    
-* globally (puts `marked-man` in your system's path):
-
-        [sudo] npm install marked-man -g
+```bash
+npx marked-man simple.md
+```
 
 EXAMPLE
 -------
 
 To view this README as a man page, run something like the following:
 
-    marked-man --version v0.1.0 --manual 'Man Utilities' README.md | man /dev/stdin
+```bash
+marked-man README.md | man /dev/stdin
+```
+
+AS MARKED EXTENSION
+-------------------
+
+```js
+import markedMan from 'marked-man';
+import marked from 'marked';
+
+marked.use(markedMan);
+```
 
 SEE ALSO
 --------
 
 [Ronn](https://github.com/rtomayko/ronn)
-
+[Ronn-NG](https://github.com/apjanke/ronn-ng)
+[groff](https://man.cx/groff_man(7))
 
 REPORTING BUGS
 --------------

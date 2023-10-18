@@ -1,0 +1,23 @@
+[4mA[24m(1)                        General Commands Manual                       [4mA[24m(1)
+
+[1mNAME[0m
+       [1ma[0m
+
+       This is a tight list:
+
+        • [1mtoggle_status[22m: test
+
+        • [1mspawn <executable> <additional args>[0m
+          TODO explain path-alike expansion,
+          ability to get a block here.
+
+       This is a loose list:
+
+        • [1mtoggle_status[22m:
+          test
+
+        • [1mspawn <executable> <additional args>[22m:
+          TODO explain path-alike expansion,
+          ability to get a block here.
+
+                                 January 1979                             [4mA[24m(1)

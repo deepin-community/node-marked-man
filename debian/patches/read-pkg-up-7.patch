@@ -1,0 +1,13 @@
+Description: compatibility with read-pkg-up < 8
+Author: Jérémy Lal <kapouer@melix.org>
+Forwarded: not-needed
+Last-Update: 2022-11-07
+--- a/src/index.js
++++ b/src/index.js
+@@ -1,5 +1,5 @@
+ import { Parser } from 'marked';
+-import { readPackageUpSync } from 'read-pkg-up';
++import { sync as readPackageUpSync } from 'read-pkg-up';
+ import Path from 'path';
+ import * as renderer from './renderer.js';
+ import * as tokenizer from './tokenizer.js';

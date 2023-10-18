@@ -1,5 +1,6 @@
-version=3
+version=4
 opts=\
-dversionmangle=s/\+(debian|dfsg|ds|deb)(\.\d+)?$//,\
-filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-marked-man-$1.tar.gz/ \
- https://github.com/kapouer/marked-man/tags .*/archive/v?([\d\.]+).tar.gz
+dversionmangle=auto,\
+filenamemangle=s/.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-marked-man-$1/ \
+ https://github.com/kapouer/marked-man/tags .*/archive/.*/v?([\d\.]+).tar.gz
+

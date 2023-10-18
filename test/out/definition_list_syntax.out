@@ -1,0 +1,20 @@
+[4mDEFITION_LIST_SYNTAX[24m(5)       File Formats Manual      [4mDEFITION_LIST_SYNTAX[24m(5)
+
+[1mNAME[0m
+       [1mdefition_list_syntax [22m- hiya
+
+       Definition lists look like unordered lists:
+
+        • term:
+          definition
+
+        • another one:
+          The definition may span
+          multiple lines and even
+          start
+          new paragraphs
+
+        • [1m--somearg[22m=<VALUE>:
+          We can do that too.
+
+                                 January 1979          [4mDEFITION_LIST_SYNTAX[24m(5)
