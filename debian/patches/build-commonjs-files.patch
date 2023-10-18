@@ -1,0 +1,19 @@
+Description: export commonjs files
+Author: Yadd <yadd@debian.org>
+Forwarded: not-needed
+Last-Update: 2022-11-14
+
+--- a/package.json
++++ b/package.json
+@@ -5,7 +5,10 @@
+   "type": "module",
+   "main": "./src/index.js",
+   "exports": {
+-    ".": "./src/index.js",
++    ".": {
++      "import": "./src/index.js",
++      "require": "./src/index.cjs"
++    },
+     "./package.json": "./package.json"
+   },
+   "bin": {

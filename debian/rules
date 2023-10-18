@@ -1,12 +1,13 @@
 #!/usr/bin/make -f
 # -*- makefile -*-
 
-# Uncomment this to turn on verbose mode.
-#export DH_VERBOSE=1
-export SOURCE_DATE_EPOCH=283996800
-
 %:
-	dh $@ --with nodejs
+	dh $@
 
 override_dh_auto_build:
-	./bin/marked-man --date="$(SOURCE_DATE_EPOCH)" README.md > marked-man.1
+	./bin/marked-man.js README.md > marked-man.1
+	mjs2cjs -o src/index.cjs src/index.js
+
+override_dh_fixperms:
+	dh_fixperms
+	chmod +x debian/node-marked-man/usr/share/nodejs/marked-man/bin/marked-man.js

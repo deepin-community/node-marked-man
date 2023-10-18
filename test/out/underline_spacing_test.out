@@ -1,0 +1,14 @@
+[4mUNDERLINE_SPACING_TEST[24m(1)   General Commands Manual  [4mUNDERLINE_SPACING_TEST[24m(1)
+
+[1mNAME[0m
+       [1munderline_spacing_test[0m
+
+        • [1m-S [4m[22mtext[24m, [1msearch [4m[22mtext[24m:
+          Performs a substring search of formula names for [4mtext[24m.
+
+        • [1m-O [22m<text>, [1mother [22m<text>:
+          Does something else.
+
+       Should space text properly.  <!-- this is a comment -->
+
+                                 January 1979        [4mUNDERLINE_SPACING_TEST[24m(1)

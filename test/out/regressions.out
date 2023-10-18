@@ -1,0 +1,11 @@
+[4mREGRESSIONS[24m(7)         Miscellaneous Information Manual         [4mREGRESSIONS[24m(7)
+
+[1mNAME[0m
+       [1mregressions [22m- issues
+
+[1minlines[0m
+       This should be  [4m(a[24m [1mb[4m[22m)[24m ok.
+
+       This should not double escape [1mpkg-js-tools[22m.
+
+                                 January 1979                   [4mREGRESSIONS[24m(7)

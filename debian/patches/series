@@ -1,1 +1,2 @@
-remove-nodeico.patch
+read-pkg-up-7.patch
+build-commonjs-files.patch

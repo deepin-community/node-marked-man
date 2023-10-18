@@ -7,19 +7,14 @@ Files: *
 Copyright: 2013 Jérémy Lal <kapouer@melix.org>
 License: Expat
 
-Files: lib/marked-man.js
-Copyright: 2013 Jérémy Lal <kapouer@melix.org>
- 2011-2013 Christopher Jeffrey (https://github.com/chjj/)
+Files: debian/*
+Copyright: 2016 Jérémy Lal <kapouer@melix.org>
+ 2020 Yadd <yadd@debian.org>
 License: Expat
 
 Files: test/*
 Copyright: 2013 Jérémy Lal <kapouer@melix.org> 
  2009 Ryan Tomayko (http://tomayko.com/about)
-License: Expat
-
-Files: debian/*
-Copyright: 2016 Jérémy Lal <kapouer@melix.org>
- 2020 Xavier Guimard <yadd@debian.org>
 License: Expat
 
 License: Expat

@@ -1,1 +1,3 @@
-.pc/
+node_modules
+test/*/*.err
+
